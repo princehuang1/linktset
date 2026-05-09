@@ -5,7 +5,7 @@ import Admin from './Admin'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/linktset">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/room/:pin" element={<Room />} />
@@ -14,5 +14,4 @@ function App() {
     </BrowserRouter>
   )
 }
-
 export default App
