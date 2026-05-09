@@ -7,24 +7,25 @@ export default function Home() {
   const [nickname, setNickname] = useState('')
   const navigate = useNavigate()
 
+  // 在 Home.jsx 找到 handleJoin 替換成以下：
   const handleJoin = async () => {
     if (!pin.trim() || !nickname.trim()) {
       alert('請輸入 PIN 碼和暱稱！')
       return
     }
 
-    // 1. 將玩家寫入 Supabase 資料庫
+    // 將玩家寫入資料庫，並要回傳生成的資料 (.select())
     const { data, error } = await supabase
       .from('players')
       .insert([{ room_pin: pin, nickname: nickname, score: 0 }])
       .select()
 
-    if (error) {
+    if (error || !data || data.length === 0) {
       console.error('加入失敗:', error)
       alert('加入失敗，請確認 PIN 碼是否正確')
     } else {
-      // 2. 成功後，跳轉到房間頁面
-      navigate(`/room/${pin}`, { state: { nickname: nickname } })
+      // 成功後，把玩家的專屬 ID (data[0].id) 傳給 Room 頁面！
+      navigate(`/room/${pin}`, { state: { nickname: nickname, playerId: data[0].id } })
     }
   }
 
