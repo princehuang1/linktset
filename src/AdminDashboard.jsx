@@ -124,7 +124,7 @@ export default function AdminDashboard({ onLogout }) {
                 onClick={handleCreateRoom} 
                 disabled={!selectedQuestionId}
                 style={{ width: '100%', padding: '15px', fontSize: '18px', color: 'white', border: 'none', borderRadius: '8px', cursor: selectedQuestionId ? 'pointer' : 'not-allowed', backgroundColor: selectedQuestionId ? '#28a745' : '#ccc' }}>
-                🚀 建立房間
+                建立房間
               </button>
             </div>
           )}
@@ -180,7 +180,7 @@ export default function AdminDashboard({ onLogout }) {
               value={title} 
               onChange={e => setTitle(e.target.value)} 
               style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }} 
-              placeholder="例如：台灣最高的山是？" 
+              placeholder="請輸入題目" 
             />
           </div>
           
