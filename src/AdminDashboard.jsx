@@ -213,7 +213,7 @@ export default function AdminDashboard({ onLogout }) {
           </div>
 
           <button onClick={handleSaveQuestion} style={{ padding: '10px 20px', backgroundColor: '#0056b3', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
-            儲存題目
+            儲存placeholder目
           </button>
         </div>
       )}
