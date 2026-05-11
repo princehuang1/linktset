@@ -150,7 +150,7 @@ export default function Room() {
       
       {/* 上半部：預留的黑色區域 */}
       <div style={{ flex: '1', backgroundColor: '#111', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#555' }}>
-        (未來預留區域：圖片或影片)
+        (預留區域)
       </div>
 
       {/* 下半部：答題區域 */}
